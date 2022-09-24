@@ -12,7 +12,7 @@ class App extends React.Component {
       isEditProfilePopupOpen: false,
       isAddPlacePopupOpen: false,
       isEditAvatarPopupOpen: false,
-      selectedCard: null
+      selectedCard: ''
     }
   }
 
@@ -35,7 +35,7 @@ class App extends React.Component {
   }
 
   closeAllPopup = () => {
-    this.setState({isEditAvatarPopupOpen: false, isEditProfilePopupOpen: false, isAddPlacePopupOpen: false, selectedCard:null})
+    this.setState({isEditAvatarPopupOpen: false, isEditProfilePopupOpen: false, isAddPlacePopupOpen: false, selectedCard:''})
   }
 
 
@@ -50,8 +50,6 @@ class App extends React.Component {
               onAddPlace={this.handleAddPlaceClick}
               onCardClick={this.handleCardClick}
             />
-           
-            <Footer />
             <PopupWithForm 
               isOpen={this.state.isEditProfilePopupOpen ? 'popup_active' : ''}
               name='edit'
@@ -166,9 +164,11 @@ class App extends React.Component {
               onClose = {this.closeAllPopup}
 
             />
-            <ImagePopup card={this.state.selectedCard} isOpen={this.state.selectedCard === null ? '' : 'popup_active'} onClose={this.closeAllPopup}/>
+            <ImagePopup card={this.state.selectedCard} isOpen={this.state.selectedCard === '' ? '' : 'popup_active'} onClose={this.closeAllPopup}/>
+            <Footer />
         </div>
         
+        {/* <!-- <script src="./scripts/index.js" type="module"></script> --> */}
     </div>
   );}
 }
