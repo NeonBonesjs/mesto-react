@@ -19,7 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://github.com/NeonBonesjs/mesto-react",
+  "homepage": ".",
   "eslintConfig": {
     "extends": [
       "react-app",

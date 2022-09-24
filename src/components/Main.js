@@ -19,6 +19,7 @@ export default class Main extends React.Component {
         userDescription: res.about,
         userAvatar: res.avatar
       }))
+      .catch(err => console.log(`Error: ${err}`))
   }
 
 
@@ -30,6 +31,7 @@ export default class Main extends React.Component {
           cards: res
         })
       })
+      .catch(err => console.log(`Error: ${err}`))
 
   }
 
@@ -60,40 +62,10 @@ export default class Main extends React.Component {
           </section>
         </main>
      
-        <div className="popup popup_photo">
-          <div className="popup__text-image">
-            <img src="#" alt="" className="popup__image" />
-            <p className="popup__text"></p>
-            <button type="button" className="popup__close"></button>
-          </div>
-        </div>
-        <div className="popup popup_delete-photo">
-          <div className="popup__container">
-            <h2 className="popup__title popup__title_delete">Вы уверены?</h2>
-            <button className="popup__button-save" type="button">
-              Да
-            </button>
-            <button className="popup__close" type="button"></button>
-          </div>
-        </div>
        
-        <template id="element-template">
-          <div className="element">
-            <img
-              src="#"
-              className="element__image"
-              alt="картинка не смогла загрузиться или ссылка неверная"
-            />
-            <div className="element__name-like">
-              <h2 className="element__name"></h2>
-              <div className="element__like-plus-number">
-                <button className="element__like-button" type="button"></button>
-                <p className="element__number-like">0</p>
-              </div>
-            </div>
-            <button type="button" className="element__trash"></button>
-          </div>
-        </template>
+        
+       
+        
       </>
     );
   }

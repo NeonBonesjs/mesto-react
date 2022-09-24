@@ -20,11 +20,11 @@ export default class Card extends React.Component{
             <div className="element__name-like">
               <h2 className="element__name">{this.props.card.name}</h2>
               <div className="element__like-plus-number">
-                <button className="element__like-button" type="button"></button>
+                <button className="element__like-button" type="button" />
                 <p className="element__number-like">{this.props.card.likes.length}</p>
               </div>
             </div>
-            <button type="button" className="element__trash"></button>
+            <button type="button" className="element__trash" />
           </div>
     )
   }
