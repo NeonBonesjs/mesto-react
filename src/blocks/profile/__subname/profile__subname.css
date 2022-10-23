@@ -4,19 +4,19 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 122%;
-  grid-area:subname;
+  grid-area: subname;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   max-width: 294px;
 }
-@media screen and (max-width:880px) {
-  .profile__subname{
-    font-size:14px;
+@media screen and (max-width: 880px) {
+  .profile__subname {
+    font-size: 14px;
   }
 }
-@media screen and (max-width:550px) {
-  .profile__subname{
+@media screen and (max-width: 550px) {
+  .profile__subname {
     line-height: 17px;
     text-align: center;
   }

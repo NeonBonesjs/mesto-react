@@ -8,13 +8,13 @@
   object-position: center;
   position: relative;
 }
-.profile__avatar:hover{
+.profile__avatar:hover {
   cursor: pointer;
-  opacity: .2;
+  opacity: 0.2;
 }
 
-@media screen and (max-width:550px) {
-  .profile__avatar{
+@media screen and (max-width: 550px) {
+  .profile__avatar {
     margin: 0 0 22.25px 0;
   }
 }
