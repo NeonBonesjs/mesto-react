@@ -44,8 +44,8 @@
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        name: data.form__name,
-        about: data.form__subname
+        name: data.name,
+        about: data.about
       })
     })
      .then(res => this._getResponseData(res)); 
@@ -89,7 +89,7 @@
      .then(res => this._getResponseData(res)); 
   }
 
-
+  
 
   deleteLike = (id) => {
     return fetch(`${this._baseUrl}/${this._groupId}/cards/${id}/likes`, {
@@ -101,6 +101,10 @@
       .then(res => this._getResponseData(res)); 
   }
 
+  changeLikeCardStatus = (cardId, isLiked) => {
+    console.log(isLiked)
+    return (isLiked ? this.deleteLike(cardId) : this.putLike(cardId))
+   }
 
   editAvatar = (data) => {
     return fetch(`${this._baseUrl}/${this._groupId}/users/me/avatar`, {

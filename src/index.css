@@ -43,3 +43,4 @@
 @import url(./blocks/popup/__error/popup__error.css);
 @import url(./blocks/popup/__form/_error/popup__form_error.css);
 @import url(./blocks/popup/__title_delete/popup__title_delete.css);
+@import url(./blocks/element/__trash/_invisible/element__trash_invisible.css);

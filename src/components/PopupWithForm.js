@@ -17,6 +17,7 @@ export default function PopupWithForm (props){
               className="popup__forms"
               name={props.name}
               id="form-edit"
+              onSubmit={props.onSubmit}
               noValidate
             >
               {props.children}
