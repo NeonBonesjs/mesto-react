@@ -6,7 +6,7 @@ export default function PopupWithForm(props) {
       id="popup-edit"
       onClick={props.onClose}
     >
-      <div className="popup__container" onClick={e => e.stopPropagation()}>
+      <div className="popup__container" onClick={(e) => e.stopPropagation()}>
         <h2 className="popup__title">{props.title}</h2>
         <form
           className="popup__forms"
@@ -24,7 +24,11 @@ export default function PopupWithForm(props) {
             {props.button}
           </button>
         </form>
-        <button className="popup__close" type="button" onClick={props.onClose}></button>
+        <button
+          className="popup__close"
+          type="button"
+          onClick={props.onClose}
+        ></button>
       </div>
     </div>
   );

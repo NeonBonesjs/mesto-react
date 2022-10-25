@@ -82,27 +82,38 @@ class App extends React.Component {
     const isLiked = card.likes.some(
       (i) => i._id === this.state.currentUser._id
     );
-    api.changeLikeCardStatus(card._id, isLiked).then((newCard) => {
-      this.setState({
-        cards: this.state.cards.map((c) => (c._id === card._id ? newCard : c)),
-      });
-    });
+    api
+      .changeLikeCardStatus(card._id, isLiked)
+      .then((newCard) => {
+        this.setState({
+          cards: this.state.cards.map((c) =>
+            c._id === card._id ? newCard : c
+          ),
+        });
+      })
+      .catch((err) => console.log(`Error: ${err}`));
   };
 
   handleCardDelete = (card) => {
-    api.removeCard(card._id).then((res) => {
-      this.setState({
-        cards: this.state.cards.filter((c) => {
-          return !(c._id === card._id);
-        }),
-      });
-    });
+    api
+      .removeCard(card._id)
+      .then((res) => {
+        this.setState({
+          cards: this.state.cards.filter((c) => {
+            return !(c._id === card._id);
+          }),
+        });
+      })
+      .catch((err) => console.log(`Error: ${err}`));
   };
 
   componentDidMount() {
-    api.getUserInfo().then((res) => {
-      this.setState({ currentUser: res });
-    });
+    api
+      .getUserInfo()
+      .then((res) => {
+        this.setState({ currentUser: res });
+      })
+      .catch((err) => console.log(`Error: ${err}`));
     this.getCards();
   }
 
